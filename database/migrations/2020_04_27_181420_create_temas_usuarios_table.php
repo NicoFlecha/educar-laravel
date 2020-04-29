@@ -16,8 +16,8 @@ class CreateTemasUsuariosTable extends Migration
         Schema::create('temas_usuarios', function (Blueprint $table) {
             $table->bigInteger('tema_id')->unsigned();
             $table->bigInteger('usuario_id')->unsigned();
-            $table->tinyInteger('nota')->unsigned();
-            $table->string('profesor_comentario');
+            $table->tinyInteger('nota')->unsigned()->nullable();
+            $table->string('profesor_comentario')->nullable();
             $table->timestamps();
 
             $table->foreign('tema_id')->references('id')->on('temas')->onDelete('cascade');

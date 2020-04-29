@@ -7,10 +7,11 @@ use App\User;
 
 class Tipo_Usuario extends Model
 {
+    protected $table = 'tipo_usuarios';
     protected $guarded = [];
 
     public function Usuarios ()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'tipo_usuario_id');
     }
 }

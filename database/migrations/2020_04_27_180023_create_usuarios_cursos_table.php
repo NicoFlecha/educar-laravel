@@ -16,8 +16,8 @@ class CreateUsuariosCursosTable extends Migration
         Schema::create('usuarios_cursos', function (Blueprint $table) {
             $table->bigInteger('curso_id')->unsigned();
             $table->bigInteger('usuario_id')->unsigned();
-            $table->tinyInteger('usuario_puntuacion')->unsigned();
-            $table->string('usuario_comentario');
+            $table->tinyInteger('usuario_puntuacion')->unsigned()->nullable();
+            $table->string('usuario_comentario')->nullable();
             $table->timestamps();
 
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');

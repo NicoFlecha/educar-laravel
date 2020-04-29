@@ -19,7 +19,7 @@ class Curso extends Model
 
     public function alumnos ()
     {
-        return $this->belongsToMany(User::class, 'usuarios_cursos', 'usuario_id', 'curso_id')->withPivot('usuario_puntuacion', 'usuario_comentario', 'created_at', 'updated_at');
+        return $this->belongsToMany(User::class, 'usuarios_cursos', 'curso_id', 'usuario_id')->withPivot('usuario_puntuacion', 'usuario_comentario', 'created_at', 'updated_at');
     }
 
     public function temas () {

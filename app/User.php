@@ -13,6 +13,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'usuarios';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -40,7 +42,7 @@ class User extends Authenticatable
 
     public function tipo ()
     {
-        return $this->belongsTo(Tipo_Usuario::class);
+        return $this->belongsTo(Tipo_Usuario::class, 'tipo_usuario_id');
     }
 
     public function cursos ()
